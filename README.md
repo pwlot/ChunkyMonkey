@@ -16,6 +16,8 @@ https://github.com/pwlot/ChunkyMonkey/releases/latest
 
 Download `ChunkyMonkeySetup.exe` for the Windows installer, or `chunkymonkey-cli-windows-x64.zip` for the standalone CLI. The installer is about 48 MB; the CLI zip is about 8 MB.
 
+macOS and Linux packages are planned, but they are not published in the current release yet.
+
 The current Windows installer is unsigned alpha software, so Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
 
 ## What it does
