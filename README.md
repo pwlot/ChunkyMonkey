@@ -6,6 +6,10 @@
 
 ChunkyMonkey is a Git/LFS desktop app and CLI for large game, ML, media, and research repos.
 
+<p align="center">
+  <img src="assets/chunkymonkey-history-screenshot.jpg" alt="ChunkyMonkey desktop showing commit history, branch checkout, staging, and chunked commit controls">
+</p>
+
 Official site: https://chunkymonkey.pwlot.com
 
 I built it after dealing with huge pushes, Git LFS mistakes, timeouts, and unreliable connections in game and ML projects. It automatically splits large commits into practical chunks, helps catch LFS problems before they hurt, and makes big pushes easier to finish.
