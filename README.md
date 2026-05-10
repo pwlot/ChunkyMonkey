@@ -20,9 +20,15 @@ I built it after dealing with huge pushes, Git LFS mistakes, timeouts, and unrel
 
 https://github.com/pwlot/ChunkyMonkey/releases/latest
 
-Download `ChunkyMonkeySetup.exe` for the Windows installer, or `chunkymonkey-cli-windows-x64.zip` for the standalone CLI. The installer is about 48 MB; the CLI zip is about 8 MB.
+Download the latest uploaded artifact for your system:
 
-macOS and Linux packages are planned, but they are not published in the current release yet.
+- Windows installer: `ChunkyMonkeySetup.exe`
+- Windows CLI: `chunkymonkey-cli-windows-x64.zip`
+- Linux desktop package: `chunkymonkey-linux-x64.deb`
+- Linux desktop tarball: `ChunkyMonkey-linux-x64.tar.gz`
+- Linux CLI: `chunkymonkey-cli-linux-x64.zip`
+
+macOS is planned, but it is not published in the current release yet.
 
 The current Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
 

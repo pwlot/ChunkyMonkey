@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.1 - 2026-05-10
+
+- Added Linux desktop release artifacts: `.deb` and `tar.gz`.
+- Added standalone Linux CLI release artifact.
+- Kept Windows installer and Windows CLI artifacts available.
+- Updated downloads to route through the latest GitHub Release.
+- macOS remains planned, but is not included in this release.
+- Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured.
+
 ## 0.7.0 - 2026-05-10
 
 - Added ChunkyMonkey Pro with signed lifetime license activation.
