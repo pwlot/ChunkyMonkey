@@ -10,7 +10,9 @@ ChunkyMonkey is a Git/LFS desktop app and CLI for large game, ML, media, and res
   <img src="assets/chunkymonkey-history-screenshot.jpg" alt="ChunkyMonkey desktop showing commit history, branch checkout, staging, and chunked commit controls">
 </p>
 
-Official site: https://chunkymonkey.pwlot.com
+Official site: https://chunkymonkey.dev
+
+Docs: https://chunkymonkey.dev/docs
 
 I built it after dealing with huge pushes, Git LFS mistakes, timeouts, and unreliable connections in game and ML projects. It automatically splits large commits into practical chunks, helps catch LFS problems before they hurt, and makes big pushes easier to finish.
 
@@ -22,7 +24,7 @@ Download `ChunkyMonkeySetup.exe` for the Windows installer, or `chunkymonkey-cli
 
 macOS and Linux packages are planned, but they are not published in the current release yet.
 
-The current Windows installer is unsigned alpha software, so Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
+The current Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
 
 ## What it does
 
@@ -38,6 +40,7 @@ The current Windows installer is unsigned alpha software, so Windows may show an
 - Includes templates and helpers for game, ML, media, and research repos.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
+- Offers a one-time Pro upgrade for multi-repo workspace tools, fast account menus, profile workflows, and stronger diagnostics.
 
 ## Why it exists
 
@@ -79,7 +82,7 @@ chunkymonkey commit --chunk-size 500mb --parts 2 --message "Add assets"
 
 ## Release channel
 
-ChunkyMonkey is currently an alpha release. That means usable, but still changing fast.
+ChunkyMonkey is in an early public release. It is usable, actively improving, and built around local Git workflows.
 
 This public repo is for:
 
