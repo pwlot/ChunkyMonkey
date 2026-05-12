@@ -10,7 +10,7 @@
 - Improved settings layout, update controls, dark mode switches, and repo picker controls.
 - Removed account reorder arrow buttons; drag reorder remains.
 - Simplified public docs into one compact guide.
-- Release workflow now requires Windows signing before public artifacts are published.
+- Windows release artifacts remain unsigned until signing credentials are configured.
 
 ## 0.7.1 - 2026-05-10
 
