@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+## 0.7.2 - 2026-05-12
+
+- Fixed slow chunk push progress and recovery behavior.
+- Fixed Windows update staging/install flow.
+- Added Live/Dev update channels with clean generated dev build versions.
+- Improved settings layout, update controls, dark mode switches, and repo picker controls.
+- Removed account reorder arrow buttons; drag reorder remains.
+- Simplified public docs into one compact guide.
+- Release workflow now requires Windows signing before public artifacts are published.
+
 ## 0.7.1 - 2026-05-10
 
 - Added Linux desktop release artifacts: `.deb` and `tar.gz`.
@@ -7,7 +19,7 @@
 - Kept Windows installer and Windows CLI artifacts available.
 - Updated downloads to route through the latest GitHub Release.
 - macOS remains planned, but is not included in this release.
-- Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured.
+- Windows SmartScreen may warn on early installer builds while signing and reputation settle.
 
 ## 0.7.0 - 2026-05-10
 
@@ -24,7 +36,7 @@
 - Added user docs for the desktop app, CLI, Pro, settings, repo management, and troubleshooting.
 - No telemetry. Diagnostics and bug reports are user-triggered.
 - Source is not public yet.
-- Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured.
+- Windows SmartScreen may warn on early installer builds while signing and reputation settle.
 
 ## 0.1.3 - 2026-05-05
 
@@ -35,4 +47,4 @@
 - Added SHA-256 checksums for public downloads.
 - No telemetry. Diagnostics and bug reports are user-triggered.
 - Source is not public yet.
-- Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured.
+- Windows SmartScreen may warn on early installer builds while signing and reputation settle.

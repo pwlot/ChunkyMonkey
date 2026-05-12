@@ -30,7 +30,7 @@ Download the latest uploaded artifact for your system:
 
 macOS is planned, but it is not published in the current release yet.
 
-The current Windows installer is unsigned software, so Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
+Windows builds are signed before public release, and release artifacts include SHA-256 checksums. The source code is not public yet.
 
 ## What it does
 
