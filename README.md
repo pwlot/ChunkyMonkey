@@ -14,7 +14,7 @@ Official site: https://chunkymonkey.dev
 
 Docs: https://chunkymonkey.dev/docs
 
-I built it after dealing with huge pushes, Git LFS mistakes, timeouts, and unreliable connections in game and ML projects. It automatically splits large commits into practical chunks, helps catch LFS problems before they hurt, and makes big pushes easier to finish.
+I built it after dealing with huge pushes, Git LFS mistakes, merge conflicts, timeouts, and unreliable connections in game and ML projects. It splits large commits into practical chunks, catches LFS problems before they hurt, and gives conflict recovery a safer local workflow.
 
 ## Release
 
@@ -38,6 +38,7 @@ Release artifacts include SHA-256 checksums. Windows may show an unknown-publish
 - Helps avoid push timeouts on slow or unreliable connections.
 - Checks Git LFS coverage for large assets, model files, datasets, video, audio, and binaries.
 - Shows push/pull progress, speed, ETA, and failure status.
+- Includes Merge Doctor for conflicted files: keep ours, keep theirs, keep both, open an editor, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
 - Scans folders for Git repos and keeps large workspaces manageable.
 - Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
 - Shows commit history and branch state.
@@ -46,6 +47,7 @@ Release artifacts include SHA-256 checksums. Windows may show an unknown-publish
 - Includes templates and helpers for game, ML, media, and research repos.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
+- Remembers the last monitor and keeps update refreshes grouped with the installed app.
 - Offers a one-time Pro upgrade for multi-repo workspace tools, fast account menus, profile workflows, and stronger diagnostics.
 
 ## Why it exists
@@ -106,6 +108,8 @@ The source code is not public.
 ChunkyMonkey shells out to local Git. It does not host your repos, sync private files to a service, or run background telemetry.
 
 Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
+
+Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; if it fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
 
 ## Source Availability
 
