@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.8.4 - 2026-05-14
+
+- Polished progress bar direction across status, update, and Git progress views.
+
 ## 0.8.3 - 2026-05-14
 
 - Fixed status and output panels reopening during background repo and update refreshes.
