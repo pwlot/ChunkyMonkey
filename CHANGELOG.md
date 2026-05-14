@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.8.2 - 2026-05-14
+
+- Improved status handling across history, background jobs, and update checks.
+- More reliable automated Git actions and Live/Dev updates.
+
 ## 0.8.1 - 2026-05-14
 
 - Fixed commit history loading for repos whose commit messages contain words like `error` or `failed`.
