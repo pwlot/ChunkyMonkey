@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.8.3 - 2026-05-14
+
+- Fixed status and output panels reopening during background repo and update refreshes.
+
 ## 0.8.2 - 2026-05-14
 
 - Improved status handling across history, background jobs, and update checks.
