@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.8.1 - 2026-05-14
+
+- Fixed commit history loading for repos whose commit messages contain words like `error` or `failed`.
+
 ## 0.8.0 - 2026-05-13
 
 - Made new branch creation explicit opt-in; commits now default to the current branch.
