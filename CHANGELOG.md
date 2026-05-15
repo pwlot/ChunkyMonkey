@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.8.5 - 2026-05-15
+
+- Hardened staged commit chunking for added, modified, deleted, and renamed files.
+- Fixed push-only flows when a clean repo has local commits ahead of upstream.
+- Improved repo refresh behavior after external Git changes and completed pushes.
+- Added clearer account, status, and output panel close behavior.
+- Added hidden-parent hints for truncated history graph views.
+- Polished Git progress and status progress bar direction.
+
 ## 0.8.4 - 2026-05-14
 
 - Polished progress bar direction across status, update, and Git progress views.
