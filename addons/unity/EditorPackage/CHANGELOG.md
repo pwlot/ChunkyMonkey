@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1
+
+- Added ChunkyMonkey desktop install status.
+- Added explicit download button.
+- Changed desktop launch to use detected executable paths without shell prompts.
+- Kept launch failures inside the Editor window instead of opening fallback prompts.
+
 ## 0.1.0
 
 - Added Unity repo doctor Editor window.

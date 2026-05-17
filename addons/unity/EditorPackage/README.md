@@ -10,4 +10,4 @@ https://github.com/pwlot/ChunkyMonkey.git?path=addons/unity/EditorPackage
 
 Then open `Tools > ChunkyMonkey > Repo Doctor`.
 
-The extension works standalone inside Unity and can optionally open the ChunkyMonkey desktop app when the user clicks `Open in ChunkyMonkey`.
+The extension works standalone inside Unity. It shows whether ChunkyMonkey desktop is installed, can open it for the current Unity project, and has a direct download button.
