@@ -10,17 +10,17 @@ ChunkyMonkey is a Git/LFS desktop app and CLI for large game, ML, media, and res
   <img src="assets/chunkymonkey-history-screenshot.jpg" alt="ChunkyMonkey desktop showing commit history, branch checkout, staging, and chunked commit controls">
 </p>
 
-Official site: https://chunkymonkey.dev
+Official site: [chunkymonkey.dev](https://chunkymonkey.dev)
 
-Docs: https://chunkymonkey.dev/docs
+Docs: [chunkymonkey.dev/docs](https://chunkymonkey.dev/docs)
 
 I built it after dealing with huge pushes, Git LFS mistakes, merge conflicts, timeouts, and unreliable connections in game and ML projects. It splits large commits into practical chunks, catches LFS problems before they hurt, and gives conflict recovery a safer local workflow.
 
 ## Release
 
-https://github.com/pwlot/ChunkyMonkey/releases/latest
+Latest release: [github.com/pwlot/ChunkyMonkey/releases/latest](https://github.com/pwlot/ChunkyMonkey/releases/latest)
 
-Download the latest uploaded artifact for your system:
+Download the latest release file for your system:
 
 - Windows installer: `ChunkyMonkeySetup.exe`
 - Windows CLI: `chunkymonkey-cli-windows-x64.zip`
@@ -30,7 +30,7 @@ Download the latest uploaded artifact for your system:
 
 macOS is planned, but it is not published in the current release yet.
 
-Release artifacts include SHA-256 checksums. Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
+Release files include SHA-256 checksums. Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
 
 ## What it does
 
@@ -43,9 +43,11 @@ Release artifacts include SHA-256 checksums. Windows may show an unknown-publish
 - Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
 - Shows commit history and branch state.
 - Protects branch checkout when the worktree has changes.
+- Includes Review Prep for checkpoints, deterministic change buckets, review branches, compare links, push, and PR handoff when GitHub CLI is ready.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
-- Includes Unity and Hugging Face workflow helpers for repo-specific Git/LFS hygiene.
+- Includes built-in Unity and Hugging Face add-ons for repo-specific Git/LFS hygiene.
+- Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
@@ -89,9 +91,20 @@ chunkymonkey preview --chunk-size 500mb --parts 2
 chunkymonkey commit --chunk-size 500mb --parts 2 --message "Add assets"
 ```
 
+## Add-ons
+
+Add-ons are local repo adapters. The top-bar Add-ons menu is for quick on/off switching. Settings > Add-ons is for adding local add-ons, trusting local backend code, refreshing status, and running actions.
+
+Built-ins:
+
+- Hugging Face: Hub model, dataset, and Space repo checks plus local HF tooling/auth actions.
+- Unity: Unity project hygiene, missing `.meta` checks, generated-folder checks, ignore/LFS rules, and a free Unity Editor extension.
+
+Developer docs: [chunkymonkey.dev/docs/add-ons](https://chunkymonkey.dev/docs/add-ons)
+
 ## Release channel
 
-ChunkyMonkey is in an early public release. It is usable, actively improving, and built around local Git workflows.
+ChunkyMonkey is a public release built around local Git workflows.
 
 This public repo is for:
 
@@ -114,13 +127,13 @@ Merge Doctor creates local backup sessions before writing a resolved conflict fi
 
 ## Source Availability
 
-ChunkyMonkey is distributed through public release artifacts. The source code is not public yet.
+ChunkyMonkey is distributed through public release files. The source code is not public yet.
 
 ## Bugs
 
 Use GitHub Issues:
 
-https://github.com/pwlot/ChunkyMonkey/issues/new
+[github.com/pwlot/ChunkyMonkey/issues/new](https://github.com/pwlot/ChunkyMonkey/issues/new)
 
 Do not include secrets, tokens, private repo contents, or proprietary files in public issues.
 
@@ -128,4 +141,4 @@ Do not include secrets, tokens, private repo contents, or proprietary files in p
 
 Support development:
 
-https://www.pwlot.com/#support
+[pwlot.com/#support](https://www.pwlot.com/#support)

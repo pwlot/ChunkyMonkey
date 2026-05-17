@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.8.6 - 2026-05-17
+
+- Added Review Prep for checkpointed review branches, deterministic change buckets, push, compare, and PR handoff workflows.
+- Added built-in Hugging Face and Unity add-ons for repo-specific Git/LFS checks.
+- Added the local add-on contract for folder-based repo adapters with explicit trust before backend code runs.
+- Added the free Unity Editor extension source and public Hugging Face Hub repo checker.
+- Polished Settings, account/add-on menus, update UI, and dark-mode contrast.
+- Hardened updater lifecycle, GitHub auth-route diagnostics, add-on execution, and public release publishing.
+- Updated public docs for desktop workflows, Review Prep, Hugging Face, Unity, and add-on developers.
+
 ## 0.8.5 - 2026-05-15
 
 - Hardened staged commit chunking for added, modified, deleted, and renamed files.
