@@ -4,6 +4,7 @@
   "displayName": "ChunkyMonkey Unity Tools",
   "description": "Unity Editor tools for Git/LFS hygiene, missing .meta checks, generated folder checks, and optional handoff to ChunkyMonkey desktop.",
   "unity": "2021.3",
+  "icon": "Images/chunkymonkey-biting-icon.png",
   "author": {
     "name": "Pwlot",
     "url": "https://chunkymonkey.dev"
