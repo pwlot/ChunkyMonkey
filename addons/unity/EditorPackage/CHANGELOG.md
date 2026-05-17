@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+- Reworked the Repo Doctor window for clean store screenshots and day-to-day use.
+- Hid local filesystem paths from the default UI.
+- Split scan, rule, process, and report logic into smaller editor modules.
+
 ## 0.1.3
 
 - Added macOS/Linux desktop bridge path detection and `CHUNKYMONKEY_DESKTOP` override.
