@@ -129,7 +129,9 @@ ChunkyMonkey shells out to local Git. It does not host your repos, sync private 
 
 Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
 
-Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; if it fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
+Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
+
+Public bug reports omit raw local paths, remotes, account names, and file lists. Use the local diagnostics export when you need to share private detail with someone you trust.
 
 ## Source Availability
 
