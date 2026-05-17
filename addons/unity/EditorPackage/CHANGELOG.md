@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+- Added branded header with the ChunkyMonkey monkey icon.
+- Cleaned up the desktop bridge panel and action layout.
+
 ## 0.1.1
 
 - Added ChunkyMonkey desktop install status.

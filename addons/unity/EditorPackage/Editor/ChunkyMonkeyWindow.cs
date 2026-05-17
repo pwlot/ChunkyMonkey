@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace ChunkyMonkey.Unity
 {
@@ -15,6 +14,7 @@ namespace ChunkyMonkey.Unity
         private Report report;
         private BridgeStatus bridge;
         private string bridgeMessage;
+        private Texture2D logo;
 
         [MenuItem("Tools/ChunkyMonkey/Repo Doctor")]
         public static void Open()
@@ -24,6 +24,8 @@ namespace ChunkyMonkey.Unity
 
         private void OnEnable()
         {
+            logo = LoadLogo();
+            titleContent = new GUIContent("ChunkyMonkey", logo);
             Refresh();
         }
 
@@ -34,28 +36,26 @@ namespace ChunkyMonkey.Unity
                 Refresh();
             }
 
+            DrawHeader();
             EditorGUILayout.Space(8);
-            EditorGUILayout.LabelField("ChunkyMonkey Unity Tools", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField(report.ProjectRoot, EditorStyles.miniLabel);
-            EditorGUILayout.Space(6);
             DrawBridge();
-            EditorGUILayout.Space(6);
+            EditorGUILayout.Space(8);
 
             using (new EditorGUILayout.HorizontalScope())
             {
-                if (GUILayout.Button("Refresh", GUILayout.Height(28))) Refresh();
-                if (GUILayout.Button("Apply .gitignore", GUILayout.Height(28))) ApplyGitIgnore();
-                if (GUILayout.Button("Apply LFS Rules", GUILayout.Height(28))) ApplyLfsRules();
+                if (ToolButton("Refresh")) Refresh();
+                if (ToolButton("Apply .gitignore")) ApplyGitIgnore();
+                if (ToolButton("Apply LFS Rules")) ApplyLfsRules();
             }
 
             using (new EditorGUILayout.HorizontalScope())
             {
                 using (new EditorGUI.DisabledScope(!bridge.Found))
                 {
-                    if (GUILayout.Button("Open in ChunkyMonkey", GUILayout.Height(28))) OpenChunkyMonkey();
+                    if (ToolButton("Open in ChunkyMonkey")) OpenChunkyMonkey();
                 }
 
-                if (GUILayout.Button("Download ChunkyMonkey", GUILayout.Height(28))) DownloadChunkyMonkey();
+                if (ToolButton("Download ChunkyMonkey")) DownloadChunkyMonkey();
             }
 
             EditorGUILayout.Space(8);
@@ -82,6 +82,25 @@ namespace ChunkyMonkey.Unity
                 $"Scan warnings: {report.ScanWarnings.Count}\n" +
                 $"Large untracked assets: {report.LargeUntrackedAssets.Count}",
                 report.HasWarnings ? MessageType.Warning : MessageType.Info);
+        }
+
+        private void DrawHeader()
+        {
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            using (new EditorGUILayout.HorizontalScope())
+            {
+                if (logo != null)
+                {
+                    GUILayout.Label(logo, GUILayout.Width(56), GUILayout.Height(56));
+                }
+
+                using (new EditorGUILayout.VerticalScope())
+                {
+                    EditorGUILayout.LabelField("ChunkyMonkey Unity Tools", HeaderStyle());
+                    EditorGUILayout.LabelField("Repo Doctor", EditorStyles.miniBoldLabel);
+                    EditorGUILayout.SelectableLabel(report.ProjectRoot, EditorStyles.miniLabel, GUILayout.Height(18));
+                }
+            }
         }
 
         private static void DrawSection(string title, IReadOnlyList<string> rows)
@@ -115,13 +134,17 @@ namespace ChunkyMonkey.Unity
 
         private void DrawBridge()
         {
-            var status = bridge.Found ? $"Found: {bridge.Path}" : "Not found";
+            var status = bridge.Found ? $"Found\n{bridge.Path}" : "Not found";
             if (!string.IsNullOrWhiteSpace(bridgeMessage))
             {
                 status += Environment.NewLine + bridgeMessage;
             }
 
-            EditorGUILayout.HelpBox($"ChunkyMonkey desktop: {status}", bridge.Found ? MessageType.Info : MessageType.Warning);
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            {
+                EditorGUILayout.LabelField("Desktop bridge", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField(status, EditorStyles.wordWrappedMiniLabel);
+            }
         }
 
         private void ApplyGitIgnore()
@@ -161,6 +184,37 @@ namespace ChunkyMonkey.Unity
         private static string YesNo(bool value)
         {
             return value ? "yes" : "no";
+        }
+
+        private static bool ToolButton(string label)
+        {
+            return GUILayout.Button(label, GUILayout.Height(30));
+        }
+
+        private static GUIStyle HeaderStyle()
+        {
+            return new GUIStyle(EditorStyles.boldLabel)
+            {
+                fontSize = 16
+            };
+        }
+
+        private static Texture2D LoadLogo()
+        {
+            var directPaths = new[]
+            {
+                "Packages/com.pwlot.chunkymonkey-unity/Images/chunkymonkey-biting-icon.png",
+                "Assets/ChunkyMonkey/Images/chunkymonkey-biting-icon.png"
+            };
+
+            foreach (var path in directPaths)
+            {
+                var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+                if (texture != null) return texture;
+            }
+
+            var guids = AssetDatabase.FindAssets("chunkymonkey-biting-icon t:Texture2D");
+            return guids.Length == 0 ? null : AssetDatabase.LoadAssetAtPath<Texture2D>(AssetDatabase.GUIDToAssetPath(guids[0]));
         }
     }
 
@@ -363,84 +417,6 @@ namespace ChunkyMonkey.Unity
             {
                 return CommandResult.Fail(error.Message);
             }
-        }
-    }
-
-    internal static class ChunkyMonkeyBridge
-    {
-        public static BridgeStatus Detect()
-        {
-            var candidates = CandidatePaths().Where(File.Exists).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
-            return candidates.Count == 0
-                ? BridgeStatus.NotFound()
-                : BridgeStatus.FoundAt(candidates[0]);
-        }
-
-        public static CommandResult Open(BridgeStatus bridge, string projectRoot)
-        {
-            if (!bridge.Found) return CommandResult.Fail("Install ChunkyMonkey desktop first, or use Download ChunkyMonkey.");
-
-            try
-            {
-                var process = Process.Start(new ProcessStartInfo
-                {
-                    FileName = bridge.Path,
-                    Arguments = $"--repo \"{projectRoot}\"",
-                    WorkingDirectory = projectRoot,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                });
-
-                return process == null
-                    ? CommandResult.Fail("ChunkyMonkey did not start.")
-                    : CommandResult.Success("");
-            }
-            catch (Exception error)
-            {
-                Debug.Log($"ChunkyMonkey launch failed: {error.Message}");
-                return CommandResult.Fail($"Could not open ChunkyMonkey: {error.Message}");
-            }
-        }
-
-        private static IEnumerable<string> CandidatePaths()
-        {
-            var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            if (!string.IsNullOrWhiteSpace(localAppData))
-            {
-                yield return Path.Combine(localAppData, "Programs", "ChunkyMonkey", "ChunkyMonkey.exe");
-                yield return Path.Combine(localAppData, "Programs", "ChunkyMonkey", "chunkymonkey.exe");
-            }
-
-            foreach (var directory in PathDirectories())
-            {
-                yield return Path.Combine(directory, "ChunkyMonkey.exe");
-                yield return Path.Combine(directory, "chunkymonkey.exe");
-            }
-        }
-
-        private static IEnumerable<string> PathDirectories()
-        {
-            var path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
-            return path
-                .Split(new[] { Path.PathSeparator }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(entry => entry.Trim().Trim('"'))
-                .Where(Directory.Exists);
-        }
-    }
-
-    internal sealed class BridgeStatus
-    {
-        public bool Found;
-        public string Path;
-
-        public static BridgeStatus FoundAt(string path)
-        {
-            return new BridgeStatus { Found = true, Path = path };
-        }
-
-        public static BridgeStatus NotFound()
-        {
-            return new BridgeStatus { Found = false, Path = string.Empty };
         }
     }
 
