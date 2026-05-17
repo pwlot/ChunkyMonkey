@@ -1,0 +1,19 @@
+{
+  "name": "com.pwlot.chunkymonkey-unity",
+  "version": "0.1.0",
+  "displayName": "ChunkyMonkey Unity Tools",
+  "description": "Unity Editor tools for Git/LFS hygiene, missing .meta checks, generated folder checks, and optional handoff to ChunkyMonkey desktop.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Pwlot",
+    "url": "https://chunkymonkey.dev"
+  },
+  "keywords": [
+    "git",
+    "lfs",
+    "unity",
+    "assets",
+    "version-control"
+  ],
+  "category": "Editor"
+}

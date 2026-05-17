@@ -30,7 +30,7 @@ Download the latest release file for your system:
 
 macOS is planned, but it is not published in the current release yet.
 
-Release files include SHA-256 checksums. Windows may show an unknown-publisher warning until signing is configured. The source code is not public yet.
+Release files include SHA-256 checksums. Windows may show an unknown-publisher warning until signing is configured. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
 
 ## What it does
 
@@ -100,6 +100,12 @@ Built-ins:
 - Hugging Face: Hub model, dataset, and Space repo checks plus local HF tooling/auth actions.
 - Unity: Unity project hygiene, missing `.meta` checks, generated-folder checks, ignore/LFS rules, and a free Unity Editor extension.
 
+Install the Unity Editor extension from Unity Package Manager:
+
+```text
+https://github.com/pwlot/ChunkyMonkey.git?path=addons/unity/EditorPackage
+```
+
 Developer docs: [chunkymonkey.dev/docs/add-ons](https://chunkymonkey.dev/docs/add-ons)
 
 ## Release channel
@@ -127,7 +133,7 @@ Merge Doctor creates local backup sessions before writing a resolved conflict fi
 
 ## Source Availability
 
-ChunkyMonkey is distributed through public release files. The source code is not public yet.
+ChunkyMonkey desktop and CLI are distributed through public release files. The Unity Editor package source is public under `addons/unity/EditorPackage`.
 
 ## Bugs
 
