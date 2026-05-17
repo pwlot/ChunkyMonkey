@@ -45,6 +45,7 @@ Release artifacts include SHA-256 checksums. Windows may show an unknown-publish
 - Protects branch checkout when the worktree has changes.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
+- Includes Unity and Hugging Face workflow helpers for repo-specific Git/LFS hygiene.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
