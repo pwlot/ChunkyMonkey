@@ -46,6 +46,11 @@ namespace ChunkyMonkey.Unity
 
         private static IEnumerable<string> CandidatePaths()
         {
+            foreach (var path in EnvironmentCandidates())
+            {
+                yield return path;
+            }
+
             var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             if (!string.IsNullOrWhiteSpace(localAppData))
             {
@@ -53,10 +58,33 @@ namespace ChunkyMonkey.Unity
                 yield return Path.Combine(localAppData, "Programs", "ChunkyMonkey", "chunkymonkey.exe");
             }
 
+            var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            if (!string.IsNullOrWhiteSpace(userProfile))
+            {
+                yield return Path.Combine(userProfile, "Applications", "ChunkyMonkey.app", "Contents", "MacOS", "ChunkyMonkey");
+                yield return Path.Combine(userProfile, ".local", "bin", "chunkymonkey");
+            }
+
+            yield return "/Applications/ChunkyMonkey.app/Contents/MacOS/ChunkyMonkey";
+            yield return "/usr/local/bin/chunkymonkey";
+            yield return "/opt/ChunkyMonkey/chunkymonkey";
+            yield return "/usr/bin/chunkymonkey";
+
             foreach (var directory in PathDirectories())
             {
                 yield return Path.Combine(directory, "ChunkyMonkey.exe");
                 yield return Path.Combine(directory, "chunkymonkey.exe");
+                yield return Path.Combine(directory, "ChunkyMonkey");
+                yield return Path.Combine(directory, "chunkymonkey");
+            }
+        }
+
+        private static IEnumerable<string> EnvironmentCandidates()
+        {
+            var configured = Environment.GetEnvironmentVariable("CHUNKYMONKEY_DESKTOP");
+            if (!string.IsNullOrWhiteSpace(configured))
+            {
+                yield return configured.Trim().Trim('"');
             }
         }
 
