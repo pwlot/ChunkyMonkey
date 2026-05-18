@@ -97,7 +97,7 @@ Add-ons are local repo adapters. The top-bar Add-ons menu is for quick on/off sw
 
 Built-ins:
 
-- Hugging Face: Hub model, dataset, and Space repo checks plus local HF tooling/auth actions.
+- Hugging Face: Hub model, dataset, Space, and Bucket checks plus local HF tooling/auth actions.
 - Unity: Unity project hygiene, missing `.meta` checks, generated-folder checks, ignore/LFS rules, and a free Unity Editor extension.
 
 Install the Unity Editor extension from Unity Package Manager:
