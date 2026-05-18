@@ -46,7 +46,7 @@ Release files include SHA-256 checksums. Windows may show an unknown-publisher w
 - Includes Review Prep for checkpoints, deterministic change buckets, review branches, compare links, push, and PR handoff when GitHub CLI is ready.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
-- Includes built-in Unity and Hugging Face add-ons for repo-specific Git/LFS hygiene.
+- Includes built-in Unity and Hugging Face add-ons for repo-specific Git/LFS checks.
 - Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
@@ -97,8 +97,8 @@ Add-ons are local repo adapters. The top-bar Add-ons menu is for quick on/off sw
 
 Built-ins:
 
-- Hugging Face: Hub model, dataset, Space, and Bucket checks plus local HF tooling/auth actions. Bucket sync uses the local HF CLI auth (`hf auth login`) or `HF_TOKEN`; paste a bucket name, `owner/name`, `hf://` handle, or bucket URL.
-- Unity: Unity project hygiene, missing `.meta` checks, generated-folder checks, ignore/LFS rules, and a free Unity Editor extension.
+- Hugging Face: model, dataset, Space, and Storage Bucket checks. It checks local HF CLI auth/tooling, accepts bucket names, `owner/name`, `hf://` handles, and bucket URLs, then uses the local HF CLI for dry-run and sync.
+- Unity: project shape, missing `.meta` files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
 
 Install the Unity Editor extension from Unity Package Manager:
 

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.8.7 - 2026-05-19
+
+- Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.
+- Tightened the public feature copy for chunked pushes, HF buckets, Unity hygiene, and add-on workflows.
+- Removed clunky slow-connection wording from the landing page.
+
 ## 0.8.6 - 2026-05-17
 
 - Added Review Prep for checkpointed review branches, deterministic change buckets, push, compare, and PR handoff workflows.
