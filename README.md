@@ -93,12 +93,24 @@ chunkymonkey commit --chunk-size 500mb --parts 2 --message "Add assets"
 
 ## Add-ons
 
-Add-ons are local repo adapters. The top-bar Add-ons menu is for quick on/off switching. Settings > Add-ons is for adding local add-ons, trusting local backend code, refreshing status, and running actions.
+Add-ons are local repo adapters. Settings > Add-ons is for enabling included add-ons, adding local folders, trusting local backend code, refreshing status, and running actions.
 
 Built-ins:
 
-- Hugging Face: model, dataset, Space, and Storage Bucket checks. It checks local HF CLI auth/tooling, accepts bucket names, `owner/name`, `hf://` handles, and bucket URLs, then uses the local HF CLI for dry-run and sync.
-- Unity: project shape, missing `.meta` files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="https://cdn.simpleicons.org/huggingface/FF9D00" alt="Hugging Face logo" width="34"><br>
+      <strong>Hugging Face</strong><br>
+      Model, dataset, Space, and Storage Bucket checks. It checks local HF CLI auth/tooling, accepts bucket names, <code>owner/name</code>, <code>hf://</code> handles, and bucket URLs, then uses the local HF CLI for dry-run and sync.
+    </td>
+    <td width="50%" valign="top">
+      <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="34"><br>
+      <strong>Unity</strong><br>
+      Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
+    </td>
+  </tr>
+</table>
 
 Install the Unity Editor extension from Unity Package Manager:
 

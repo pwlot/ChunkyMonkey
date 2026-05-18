@@ -6,6 +6,8 @@
 
 - Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.
 - Tightened the public feature copy for chunked pushes, HF buckets, Unity hygiene, and add-on workflows.
+- Added public landing-page dark mode and a broader Git client comparison covering GitKraken, GitHub Desktop, and Sourcetree.
+- Updated public docs with separate Hugging Face and Unity add-on sections.
 - Removed clunky slow-connection wording from the landing page.
 
 ## 0.8.6 - 2026-05-17
