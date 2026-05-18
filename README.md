@@ -100,9 +100,9 @@ Built-ins:
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://cdn.simpleicons.org/huggingface/FF9D00" alt="Hugging Face logo" width="34"><br>
+      <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" width="42"><br>
       <strong>Hugging Face</strong><br>
-      Model, dataset, Space, and Storage Bucket checks. It checks local HF CLI auth/tooling, accepts bucket names, <code>owner/name</code>, <code>hf://</code> handles, and bucket URLs, then uses the local HF CLI for dry-run and sync.
+      Model, dataset, Space, and Storage Bucket workflows. It checks local HF CLI auth/tooling, accepts bucket names, <code>owner/name</code>, <code>hf://</code> handles, and bucket URLs, then uses local HF tooling for create/check, candidate scan, dry-run, sync, and optional source-ignore.
     </td>
     <td width="50%" valign="top">
       <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="34"><br>
