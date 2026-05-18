@@ -6,7 +6,7 @@
 
 - Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.
 - Tightened the public feature copy for chunked pushes, HF buckets, Unity hygiene, and add-on workflows.
-- Added public landing-page dark mode and a broader Git client comparison covering GitKraken, Tower, Fork, and SmartGit.
+- Added public landing-page dark mode and a broader paid Git client comparison.
 - Updated public docs with separate Hugging Face and Unity add-on sections.
 - Changed the public site to load light by default, tightened dark-mode contrast, and swapped the comparison to paid Git clients.
 - Renamed the public support CTA to Support Author.
