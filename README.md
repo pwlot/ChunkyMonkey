@@ -24,13 +24,13 @@ Download the latest release file for your system:
 
 - Windows installer: `ChunkyMonkeySetup.exe`
 - Windows CLI: `chunkymonkey-cli-windows-x64.zip`
-- Linux desktop package: `chunkymonkey-linux-x64.deb`
-- Linux desktop tarball: `ChunkyMonkey-linux-x64.tar.gz`
-- Linux CLI: `chunkymonkey-cli-linux-x64.zip`
+- Linux desktop package (experimental): `chunkymonkey-linux-x64.deb`
+- Linux desktop tarball (experimental): `ChunkyMonkey-linux-x64.tar.gz`
+- Linux CLI (experimental): `chunkymonkey-cli-linux-x64.zip`
 
 macOS is planned, but it is not published in the current release yet.
 
-Release files include SHA-256 checksums. Windows may show an unknown-publisher warning until signing is configured. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
+Release files include SHA-256 checksums. Windows is the primary tested path. Linux x64 builds are experimental until real install/update smoke is complete. Windows may show an unknown-publisher warning until signing is configured. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
 
 ## What it does
 

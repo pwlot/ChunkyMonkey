@@ -11,6 +11,7 @@
 - Changed the public site to load light by default, tightened dark-mode contrast, and swapped the comparison to paid Git clients.
 - Renamed the public support CTA to Support Author.
 - Removed clunky slow-connection wording from the landing page.
+- Marked Linux x64 builds as experimental until real install/update smoke is complete.
 
 ## 0.8.6 - 2026-05-17
 
