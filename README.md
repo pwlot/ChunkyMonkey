@@ -4,7 +4,7 @@
   <img src="assets/chunkymonkey-biting-logo.webp" alt="ChunkyMonkey logo" width="420">
 </p>
 
-ChunkyMonkey is a Git/LFS desktop app and CLI for large game, ML, media, and research repos.
+ChunkyMonkey is an agent-ready Git/LFS desktop app and CLI for large game, ML, media, and research repos.
 
 <p align="center">
   <img src="assets/chunkymonkey-history-screenshot.jpg" alt="ChunkyMonkey desktop showing commit history, branch checkout, staging, and chunked commit controls">
@@ -40,6 +40,7 @@ Release files include SHA-256 checksums. Windows is the primary tested path. Lin
 - Shows push/pull progress, speed, ETA, and failure status.
 - Includes Diff View for side-by-side file review with whitespace-noise hiding plus hunk and line-block stage/unstage/discard.
 - Includes Merge Doctor for conflicted files: base/ours/theirs/result panes, keep ours, keep theirs, keep both, open an editor, launch mergetool, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
+- Lets you bring your own key for optional AI assistance through OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, or a custom/local OpenAI-compatible endpoint.
 - Scans folders for Git repos and keeps large workspaces manageable.
 - Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
 - Shows commit history and branch state.
@@ -48,8 +49,9 @@ Release files include SHA-256 checksums. Windows is the primary tested path. Lin
 - Shows GitHub Pull Requests, Issues, PR risk, stashes, conflicts, and undo/checkpoint entries in the left Navigator.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
-- Includes built-in Unity and Hugging Face add-ons for repo-specific Git/LFS checks.
+- Includes built-in Unity, Hugging Face, and MCP Agent add-ons for repo-specific Git/LFS checks and local agent access.
 - Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
+- Exposes repo status, diffs, history, Review Prep, health checks, and guarded Git actions to local AI agents through `chunkymonkey mcp`.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
@@ -101,15 +103,20 @@ Built-ins:
 
 <table>
   <tr>
-    <td width="50%" valign="top">
+    <td width="33%" valign="top">
       <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" width="42"><br>
       <strong>Hugging Face</strong><br>
       Model, dataset, Space, and Storage Bucket workflows. It checks local HF CLI auth/tooling, accepts bucket names, <code>owner/name</code>, <code>hf://</code> handles, and bucket URLs, then uses local HF tooling for create/check, candidate scan, dry-run, sync, and optional source-ignore.
     </td>
-    <td width="50%" valign="top">
+    <td width="33%" valign="top">
       <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="34"><br>
       <strong>Unity</strong><br>
       Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
+    </td>
+    <td width="33%" valign="top">
+      <img src="assets/chunkymonkey-biting-logo.webp" alt="ChunkyMonkey icon" width="34"><br>
+      <strong>MCP Agent</strong><br>
+      Local MCP server for AI agents. It exposes repo status, staging, diffs, history, conflicts, Review Prep, health checks, and guarded Git actions. Start with <code>chunkymonkey mcp</code> or use <code>chunkymonkey mcp --read-only</code>.
     </td>
   </tr>
 </table>
@@ -143,7 +150,7 @@ ChunkyMonkey shells out to local Git. It does not host your repos, sync private 
 
 Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
 
-Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
+Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. MCP write tools require explicit `confirm=true`. The optional LLM helper uses the provider, API key, and optional base URL you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
 
 Public bug reports omit raw local paths, remotes, account names, and file lists. Use the local diagnostics export when you need to share private detail with someone you trust.
 

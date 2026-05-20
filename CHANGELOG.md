@@ -8,6 +8,8 @@
 - Expanded Merge Doctor with base/ours/theirs/result panes and Git mergetool launch.
 - Added footer update status/check button for the selected Live/Dev channel.
 - Hardened HF Bucket sync failure copy when the installed HF CLI lacks `hf buckets sync`.
+- Added the built-in MCP Agent add-on and `chunkymonkey mcp` server for local AI agents.
+- Wired optional LLM assistance for OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, and custom/local OpenAI-compatible endpoints.
 
 ## 0.8.7 - 2026-05-19
 
