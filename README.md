@@ -114,7 +114,7 @@ Built-ins:
       Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
     </td>
     <td width="33%" valign="top">
-      <img src="assets/chunkymonkey-biting-logo.webp" alt="ChunkyMonkey icon" width="34"><br>
+      <img src="assets/mcp-agent-robot-monkey.webp" alt="MCP Agent robot monkey" width="34"><br>
       <strong>MCP Agent</strong><br>
       Local MCP server for AI agents. It exposes repo status, staging, diffs, history, conflicts, Review Prep, health checks, and guarded Git actions. Start with <code>chunkymonkey mcp</code> or use <code>chunkymonkey mcp --read-only</code>.
     </td>
