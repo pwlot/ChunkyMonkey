@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added side-by-side Diff View hunk and zero-context line-block stage/unstage/discard.
+- Added left Navigator Pull Requests, Issues, PR risk, and undo/checkpoint groups.
+- Added PR risk checks against the target branch, including overlapping files and likely conflict candidates.
+- Expanded Merge Doctor with base/ours/theirs/result panes and Git mergetool launch.
+- Added footer update status/check button for the selected Live/Dev channel.
+- Hardened HF Bucket sync failure copy when the installed HF CLI lacks `hf buckets sync`.
+
 ## 0.8.7 - 2026-05-19
 
 - Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.

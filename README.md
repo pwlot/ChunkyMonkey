@@ -38,12 +38,14 @@ Release files include SHA-256 checksums. Windows is the primary tested path. Lin
 - Helps avoid push timeouts on slow or unreliable connections.
 - Checks Git LFS coverage for large assets, model files, datasets, video, audio, and binaries.
 - Shows push/pull progress, speed, ETA, and failure status.
-- Includes Merge Doctor for conflicted files: keep ours, keep theirs, keep both, open an editor, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
+- Includes Diff View for side-by-side file review with whitespace-noise hiding plus hunk and line-block stage/unstage/discard.
+- Includes Merge Doctor for conflicted files: base/ours/theirs/result panes, keep ours, keep theirs, keep both, open an editor, launch mergetool, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
 - Scans folders for Git repos and keeps large workspaces manageable.
 - Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
 - Shows commit history and branch state.
 - Protects branch checkout when the worktree has changes.
-- Includes Review Prep for checkpoints, deterministic change buckets, review branches, compare links, push, and PR handoff when GitHub CLI is ready.
+- Includes Review Prep for checkpoints, deterministic change buckets, review branches, PR risk checks, compare links, push, and PR handoff when GitHub CLI is ready.
+- Shows GitHub Pull Requests, Issues, PR risk, stashes, conflicts, and undo/checkpoint entries in the left Navigator.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
 - Includes built-in Unity and Hugging Face add-ons for repo-specific Git/LFS checks.
@@ -141,7 +143,7 @@ ChunkyMonkey shells out to local Git. It does not host your repos, sync private 
 
 Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
 
-Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
+Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. The optional LLM helper uses the provider and API key you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
 
 Public bug reports omit raw local paths, remotes, account names, and file lists. Use the local diagnostics export when you need to share private detail with someone you trust.
 
