@@ -8,6 +8,7 @@
 - Expanded Merge Doctor with base/ours/theirs/result panes and Git mergetool launch.
 - Added footer update status/check button for the selected Live/Dev channel.
 - Hardened HF Bucket sync failure copy when the installed HF CLI lacks `hf buckets sync`.
+- Fixed the Commit panel action button so push-only states show existing local commits and mixed commit+push states count all commits sent to upstream.
 - Added the built-in MCP Agent add-on and `chunkymonkey mcp` server for local AI agents.
 - Wired optional LLM assistance for OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, and custom/local OpenAI-compatible endpoints.
 
