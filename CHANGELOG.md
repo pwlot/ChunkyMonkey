@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.8.7 - 2026-05-21
+
 - Added side-by-side Diff View hunk and zero-context line-block stage/unstage/discard.
 - Added left Navigator Pull Requests, Issues, PR risk, and undo/checkpoint groups.
 - Added PR risk checks against the target branch, including overlapping files and likely conflict candidates.
@@ -11,9 +13,6 @@
 - Fixed the Commit panel action button so push-only states show existing local commits and mixed commit+push states count all commits sent to upstream.
 - Added the built-in MCP Agent add-on and `chunkymonkey mcp` server for local AI agents.
 - Wired optional LLM assistance for OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, and custom/local OpenAI-compatible endpoints.
-
-## 0.8.7 - 2026-05-19
-
 - Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.
 - Tightened the public feature copy for chunked pushes, HF buckets, Unity hygiene, and add-on workflows.
 - Added public landing-page dark mode and a broader paid Git client comparison.
