@@ -13,14 +13,7 @@
 - Fixed the Commit panel action button so push-only states show existing local commits and mixed commit+push states count all commits sent to upstream.
 - Added the built-in MCP Agent add-on and `chunkymonkey mcp` server for local AI agents.
 - Wired optional LLM assistance for OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, and custom/local OpenAI-compatible endpoints.
-- Updated the public site with concrete Hugging Face and Unity add-on sections using branded logos.
-- Tightened the public feature copy for chunked pushes, HF buckets, Unity hygiene, and add-on workflows.
-- Added public landing-page dark mode and a broader paid Git client comparison.
-- Updated public docs with separate Hugging Face and Unity add-on sections.
-- Changed the public site to load light by default, tightened dark-mode contrast, and swapped the comparison to paid Git clients.
-- Renamed the public support CTA to Support Author.
-- Removed clunky slow-connection wording from the landing page.
-- Marked Linux x64 builds as experimental until real install/update smoke is complete.
+- Included Windows and experimental Linux x64 release artifacts.
 
 ## 0.8.6 - 2026-05-17
 
@@ -30,7 +23,7 @@
 - Added the free Unity Editor extension source and public Hugging Face Hub repo checker.
 - Polished Settings, account/add-on menus, update UI, and dark-mode contrast.
 - Hardened updater lifecycle, GitHub auth-route diagnostics, add-on execution, and public release publishing.
-- Updated public docs for desktop workflows, Review Prep, Hugging Face, Unity, and add-on developers.
+- Updated user docs for desktop workflows, Review Prep, Hugging Face, Unity, and add-on developers.
 
 ## 0.8.5 - 2026-05-15
 
