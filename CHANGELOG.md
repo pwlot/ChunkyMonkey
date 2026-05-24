@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.8.8 - 2026-05-24
+
+- Added discard-all beside Stage all and confirmed per-file discard from the changed-file context menu.
+- Added configured local repo dirty-state refresh polling, plus forced refresh when the app regains focus.
+- Expanded changed and committed file context menus with file history, blame, restore/open/reveal/copy/patch actions, and external diff/editor/default-app handoff.
+- Fixed file history and blame actions so they open real review panes instead of completing with unusable output text.
+- Fixed unstaged discard for mixed staged-and-unstaged files so staged changes are preserved.
+- Fixed deleted-file commit blame and restore by reading the file from the selected commit's parent when needed.
+
 ## 0.8.7 - 2026-05-21
 
 - Added side-by-side Diff View hunk and zero-context line-block stage/unstage/discard.
