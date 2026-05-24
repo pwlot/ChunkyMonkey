@@ -30,7 +30,7 @@ Download the latest release file for your system:
 
 macOS is planned, but it is not published in the current release yet.
 
-Release files include SHA-256 checksums. Windows is the primary tested path. Linux x64 builds are experimental until install/update verification is complete. Windows may show an unknown-publisher warning until signing is configured. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
+Release files include SHA-256 checksums. Windows is the primary tested path. Linux x64 builds are experimental until install/update verification is complete. Windows may show an unknown-publisher warning until signing is configured. Winget availability depends on a signed installer. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
 
 ## What it does
 

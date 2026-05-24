@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Clarified release policy and docs: unsigned GitHub Releases are allowed when Windows signing is not configured, and winget requires a signed installer.
+
 ## 0.8.8 - 2026-05-24
 
 - Added discard-all beside Stage all and confirmed per-file discard from the changed-file context menu.
