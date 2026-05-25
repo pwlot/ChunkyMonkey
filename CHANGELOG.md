@@ -6,6 +6,7 @@
 
 ## 0.8.8 - 2026-05-24
 
+- Added Ctrl/Meta and Shift multi-select for staged and unstaged file lists, with selected-file stage, unstage, discard, stash, ignore, and patch-copy actions.
 - Added discard-all beside Stage all and confirmed per-file discard from the changed-file context menu.
 - Added configured local repo dirty-state refresh polling, plus forced refresh when the app regains focus.
 - Expanded changed and committed file context menus with file history, blame, restore/open/reveal/copy/patch actions, and external diff/editor/default-app handoff.
