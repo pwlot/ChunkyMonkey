@@ -4,6 +4,15 @@
 
 - Clarified release policy and docs: unsigned GitHub Releases are allowed when Windows signing is not configured, and winget requires a signed installer.
 
+## 0.8.9 - 2026-07-22
+
+- Made startup recovery more reliable and added confirmation that an updated frontend loaded successfully.
+- Preserved exact staged content, including large files and Git LFS pointers, when committing in chunks.
+- Reduced background repository work and improved refresh behavior after external changes.
+- Rechecked trusted local add-ons when their code changes.
+- Cleaned stale update files automatically after successful installs.
+- Clarified that Pro is a one-time lifetime purchase with no subscription.
+
 ## 0.8.8 - 2026-05-24
 
 - Added Ctrl/Meta and Shift multi-select for staged and unstaged file lists, with selected-file stage, unstage, discard, stash, ignore, and patch-copy actions.
