@@ -55,7 +55,7 @@ Release files include SHA-256 checksums. Windows is the primary tested path. Lin
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
-- Offers a one-time Pro upgrade for multi-repo workspace tools, fast account menus, profile workflows, and stronger diagnostics.
+- Offers a one-time Pro upgrade for multi-repo workspace tools, account management, and stronger diagnostics.
 
 ## Why it exists
 

@@ -2,15 +2,20 @@
 
 ## Unreleased
 
-- Clarified release policy and docs: unsigned GitHub Releases are allowed when Windows signing is not configured, and winget requires a signed installer.
-
-## 0.8.9 - 2026-07-22
+## 0.8.9 - 2026-07-27
 
 - Made startup recovery more reliable and added confirmation that an updated frontend loaded successfully.
 - Preserved exact staged content, including large files and Git LFS pointers, when committing in chunks.
 - Reduced background repository work and improved refresh behavior after external changes.
 - Rechecked trusted local add-ons when their code changes.
 - Cleaned stale update files automatically after successful installs.
+- Added editable per-account commit identity emails and clearer account controls in Settings.
+- Added a new-branch button beside the branch selector with guarded create and checkout options.
+- Fixed commit-history search and made clearing a search refresh immediately.
+- Simplified Health navigation, moved completed reports into the central workspace, and separated reports from repo-changing actions.
+- Added browser-based Hugging Face login with visible progress, automatic account refresh, and an older-CLI fallback.
+- Added nonzero ahead/behind counts directly to Pull and Push while removing duplicate sidebar status boxes.
+- Hardened Git action safety, updater recovery, and add-on trust checks.
 - Clarified that Pro is a one-time lifetime purchase with no subscription.
 
 ## 0.8.8 - 2026-05-24
