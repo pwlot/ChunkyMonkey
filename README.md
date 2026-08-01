@@ -51,9 +51,9 @@ Linux x64 builds are experimental until install/update verification is complete.
 - Shows GitHub Pull Requests, Issues, PR risk, stashes, conflicts, and undo/checkpoint entries in the left Navigator.
 - Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
 - Includes templates and helpers for game, ML, media, and research repos.
-- Includes built-in Unity, Hugging Face, and MCP Agent add-ons for repo-specific Git/LFS checks and local agent access.
+- Includes built-in Unity, Unreal Engine, Hugging Face, and MCP Agent add-ons for repo-specific Git/LFS checks and local agent access.
 - Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
-- Exposes repo status, diffs, history, Review Prep, health checks, and guarded Git actions to local AI agents through `chunkymonkey mcp`.
+- Connects Codex, Claude Code, and other MCP clients to commit/review prompts, repo context, and guarded Git actions through `chunkymonkey mcp`.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
