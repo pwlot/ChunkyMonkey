@@ -1,6 +1,6 @@
 # Security
 
-Report security-sensitive issues privately by contacting the maintainer instead of opening a public issue.
+Report security-sensitive issues privately at [chunkymonkey@pwlot.com](mailto:chunkymonkey@pwlot.com) instead of opening a public issue.
 
 Do not post secrets, access tokens, private repo contents, proprietary files, or private dataset contents in public issues.
 

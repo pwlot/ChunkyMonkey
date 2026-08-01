@@ -6,10 +6,6 @@
 
 ChunkyMonkey is an agent-ready Git/LFS desktop app and CLI for large game, ML, media, and research repos.
 
-<p align="center">
-  <img src="assets/chunkymonkey-history-screenshot.jpg" alt="ChunkyMonkey desktop showing commit history, branch checkout, staging, and chunked commit controls">
-</p>
-
 Official site: [chunkymonkey.dev](https://chunkymonkey.dev)
 
 Docs: [chunkymonkey.dev/docs](https://chunkymonkey.dev/docs)
@@ -18,19 +14,25 @@ I built it after dealing with huge pushes, Git LFS mistakes, merge conflicts, ti
 
 ## Release
 
-Latest release: [github.com/pwlot/ChunkyMonkey/releases/latest](https://github.com/pwlot/ChunkyMonkey/releases/latest)
+### Windows
 
-Download the latest release file for your system:
+[Download the latest Windows installer: `ChunkyMonkeySetup.exe`](https://github.com/pwlot/ChunkyMonkey/releases/latest/download/ChunkyMonkeySetup.exe)
 
-- Windows installer: `ChunkyMonkeySetup.exe`
+Windows is the primary tested path. Windows may show an unknown-publisher warning until signing is configured.
+
+### Other downloads and checksums
+
+[Open all files for the latest release](https://github.com/pwlot/ChunkyMonkey/releases/latest), then choose only the file you need:
+
 - Windows CLI: `chunkymonkey-cli-windows-x64.zip`
 - Linux desktop package (experimental): `chunkymonkey-linux-x64.deb`
 - Linux desktop tarball (experimental): `ChunkyMonkey-linux-x64.tar.gz`
 - Linux CLI (experimental): `chunkymonkey-cli-linux-x64.zip`
+- Integrity verification: `checksums.txt`
 
 macOS is planned, but it is not published in the current release yet.
 
-Release files include SHA-256 checksums. Windows is the primary tested path. Linux x64 builds are experimental until install/update verification is complete. Windows may show an unknown-publisher warning until signing is configured. Winget availability depends on a signed installer. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
+Linux x64 builds are experimental until install/update verification is complete. Winget availability depends on a signed installer. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
 
 ## What it does
 
@@ -40,7 +42,7 @@ Release files include SHA-256 checksums. Windows is the primary tested path. Lin
 - Shows push/pull progress, speed, ETA, and failure status.
 - Includes Diff View for side-by-side file review with whitespace-noise hiding plus hunk and line-block stage/unstage/discard.
 - Includes Merge Doctor for conflicted files: base/ours/theirs/result panes, keep ours, keep theirs, keep both, open an editor, launch mergetool, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
-- Lets you bring your own key for optional AI assistance through OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, or a custom/local OpenAI-compatible endpoint.
+- Lets you bring your own key for optional AI assistance through supported cloud and local providers or a compatible custom endpoint.
 - Scans folders for Git repos and keeps large workspaces manageable.
 - Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
 - Shows commit history and branch state.
@@ -150,13 +152,17 @@ ChunkyMonkey shells out to local Git. It does not host your repos, sync private 
 
 Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
 
-Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. MCP write tools require explicit `confirm=true`. The optional LLM helper uses the provider, API key, and optional base URL you configure locally; API keys are kept in the OS credential store when available. If the model request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
+Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. MCP write tools require explicit `confirm=true`. Optional AI assistance uses the service, API key, and optional base URL you configure locally; API keys are kept in the OS credential store when available. If a request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
 
 Public bug reports omit raw local paths, remotes, account names, and file lists. Use the local diagnostics export when you need to share private detail with someone you trust.
 
 ## Source Availability
 
 ChunkyMonkey desktop and CLI are distributed through public release files. The Unity Editor package source is public under `addons/unity/EditorPackage`.
+
+## License
+
+ChunkyMonkey is distributed under the [MIT License](LICENSE). Release packages include a copy of the license.
 
 ## Bugs
 
@@ -166,8 +172,12 @@ Use GitHub Issues:
 
 Do not include secrets, tokens, private repo contents, or proprietary files in public issues.
 
+For security-sensitive reports, email [chunkymonkey@pwlot.com](mailto:chunkymonkey@pwlot.com).
+
 ## Support
 
 Support development:
 
 [pwlot.com/#support](https://www.pwlot.com/#support)
+
+Policies: [Terms](https://chunkymonkey.dev/#terms) | [Refunds](https://chunkymonkey.dev/#refunds) | [Privacy](https://chunkymonkey.dev/#privacy)

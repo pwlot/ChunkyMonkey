@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 0.9.0 - 2026-08-01
+
+### Highlights
+
+- Added guarded detection and repair for oversized unpushed Git history, including large assets that should be migrated to Git LFS.
+- Made long pushes resilient to active slow transfers, with clearer phase-aware progress and numbered chunk commits.
+- Unified toolbar and Commit-panel pushes around the configured chunk target, with a persistent 1000 MB app default.
+- Hardened selected-account routing so the identity shown in the header matches the verified SSH push route.
+- Added explicit confirmation for push-route changes and destructive branch deletion.
+- Improved GitHub and Hugging Face device authentication with visible codes and direct copy/open controls.
+- Made staging failures explicit, disabled unsafe commit actions when file state is unavailable, and gave active file lists more panel space.
+- Added responsive checks for common Windows 125% and 150% scaled layouts.
+- Added clear Terms, Refund Policy, and Privacy sections plus a direct Windows-installer download path.
+- Refreshed account discovery, repository controls, right-panel layout, and public download guidance.
+
 ## 0.8.9 - 2026-07-27
 
 - Made startup recovery more reliable and added confirmation that an updated frontend loaded successfully.
@@ -38,7 +53,7 @@
 - Hardened HF Bucket sync failure copy when the installed HF CLI lacks `hf buckets sync`.
 - Fixed the Commit panel action button so push-only states show existing local commits and mixed commit+push states count all commits sent to upstream.
 - Added the built-in MCP Agent add-on and `chunkymonkey mcp` server for local AI agents.
-- Wired optional LLM assistance for OpenAI, Anthropic Claude, Google Gemini, xAI Grok, OpenRouter, and custom/local OpenAI-compatible endpoints.
+- Wired optional AI assistance for supported cloud, local, and compatible custom endpoints.
 - Included Windows and experimental Linux x64 release artifacts.
 
 ## 0.8.6 - 2026-05-17
