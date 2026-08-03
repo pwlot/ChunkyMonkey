@@ -113,7 +113,7 @@ Built-ins:
     <td width="33%" valign="top">
       <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="34"><br>
       <strong>Unity</strong><br>
-      Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large untracked assets, and a free Unity Editor extension.
+      Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large project assets, and the free ChunkyMonkey Git and LFS Tools Editor extension.
     </td>
     <td width="33%" valign="top">
       <img src="assets/mcp-agent-robot-monkey.webp" alt="MCP Agent robot monkey" width="34"><br>
@@ -123,7 +123,7 @@ Built-ins:
   </tr>
 </table>
 
-Install the Unity Editor extension from Unity Package Manager:
+Install ChunkyMonkey Git and LFS Tools from Unity Package Manager:
 
 ```text
 https://github.com/pwlot/ChunkyMonkey.git?path=addons/unity/EditorPackage

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5
+
+- Renamed the package to ChunkyMonkey Git and LFS Tools.
+- Removed the optional desktop application launcher and download link.
+- Removed external process execution from the large asset check.
+- Renamed code namespaces so they do not contain third-party trademarks.
+- Added a complete, numbered PDF manual and expanded package documentation.
+
 ## 0.1.4
 
 - Reworked the Repo Doctor window for clean store screenshots and day-to-day use.

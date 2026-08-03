@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ChunkyMonkey.Unity
+namespace ChunkyMonkey.GitLfsTools
 {
     internal sealed class Report
     {
@@ -11,7 +11,7 @@ namespace ChunkyMonkey.Unity
         public List<string> MissingIgnoreRules = new List<string>();
         public List<string> MissingLfsRules = new List<string>();
         public List<string> ScanWarnings = new List<string>();
-        public List<string> LargeUntrackedAssets = new List<string>();
+        public List<string> LargeAssets = new List<string>();
 
         public int IssueCount
         {
@@ -22,7 +22,7 @@ namespace ChunkyMonkey.Unity
                     MissingIgnoreRules.Count +
                     MissingLfsRules.Count +
                     ScanWarnings.Count +
-                    LargeUntrackedAssets.Count;
+                    LargeAssets.Count;
             }
         }
 

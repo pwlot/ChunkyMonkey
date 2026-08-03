@@ -1,9 +1,10 @@
 {
-  "name": "com.pwlot.chunkymonkey-unity",
-  "version": "0.1.4",
-  "displayName": "ChunkyMonkey Unity Tools",
-  "description": "Unity Editor tools for Git/LFS hygiene, missing .meta checks, generated folder checks, and optional handoff to ChunkyMonkey desktop.",
-  "unity": "2021.3",
+  "name": "com.pwlot.chunkymonkey-git-lfs-tools",
+  "version": "0.1.5",
+  "displayName": "ChunkyMonkey Git and LFS Tools",
+  "description": "Editor-only repository checks for missing .meta files, generated folders, Git ignore rules, Git LFS rules, and large project assets.",
+  "unity": "6000.0",
+  "unityRelease": "40f1",
   "icon": "Images/chunkymonkey-biting-icon.png",
   "author": {
     "name": "Pwlot",

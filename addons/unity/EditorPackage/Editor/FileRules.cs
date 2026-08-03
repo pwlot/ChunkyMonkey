@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ChunkyMonkey.Unity
+namespace ChunkyMonkey.GitLfsTools
 {
     internal static class FileRules
     {

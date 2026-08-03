@@ -6,4 +6,5 @@ Use this sample as a checklist when validating the extension in a disposable Uni
 2. Confirm generated folder warnings appear when `Library/`, `Temp/`, or `Logs/` exist.
 3. Click `Apply .gitignore`.
 4. Click `Apply LFS Rules`.
-5. Refresh and confirm those rule warnings clear.
+5. Review the changed `.gitignore` and `.gitattributes` files.
+6. Click `Refresh` and confirm those rule warnings clear.

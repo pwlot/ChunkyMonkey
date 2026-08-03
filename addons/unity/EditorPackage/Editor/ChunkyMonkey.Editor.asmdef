@@ -1,6 +1,6 @@
 {
-  "name": "ChunkyMonkey.Unity.Editor",
-  "rootNamespace": "ChunkyMonkey.Unity",
+  "name": "ChunkyMonkey.GitLfsTools.Editor",
+  "rootNamespace": "ChunkyMonkey.GitLfsTools",
   "references": [],
   "includePlatforms": [
     "Editor"

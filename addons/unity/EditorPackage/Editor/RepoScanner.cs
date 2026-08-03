@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ChunkyMonkey.Unity
+namespace ChunkyMonkey.GitLfsTools
 {
     internal static class RepoScanner
     {
@@ -22,7 +22,7 @@ namespace ChunkyMonkey.Unity
                 MissingIgnoreRules = FileRules.Missing(Path.Combine(root, ".gitignore"), ChunkyMonkeyWindowRules.IgnoreRules),
                 MissingLfsRules = FileRules.Missing(Path.Combine(root, ".gitattributes"), ChunkyMonkeyWindowRules.LfsRules),
                 ScanWarnings = scanWarnings,
-                LargeUntrackedAssets = LargeUntracked(root, scanWarnings)
+                LargeAssets = FindLargeAssets(root, scanWarnings)
             };
         }
 
@@ -39,24 +39,29 @@ namespace ChunkyMonkey.Unity
                 .ToList();
         }
 
-        private static List<string> LargeUntracked(string root, List<string> scanWarnings)
+        private static List<string> FindLargeAssets(string root, List<string> scanWarnings)
         {
-            var result = ProcessLauncher.Capture("git", "status --porcelain=v1 -z --untracked-files=all", root);
-            if (!result.Ok)
+            var assets = Path.Combine(root, "Assets");
+            if (!Directory.Exists(assets)) return new List<string>();
+
+            try
             {
-                var detail = string.IsNullOrWhiteSpace(result.Output) ? "git status failed." : result.Output.Trim();
-                scanWarnings.Add($"Large untracked asset check skipped: {detail}");
+                return Directory.EnumerateFiles(assets, "*", SearchOption.AllDirectories)
+                    .Where(IsLargeFile)
+                    .Select(path => Rel(root, path))
+                    .Take(100)
+                    .ToList();
+            }
+            catch (IOException error)
+            {
+                scanWarnings.Add($"Large asset check skipped: {error.Message}");
                 return new List<string>();
             }
-
-            return result.Output
-                .Split(new[] { '\0' }, StringSplitOptions.RemoveEmptyEntries)
-                .Where(row => row.StartsWith("?? ", StringComparison.Ordinal))
-                .Select(row => row.Substring(3))
-                .Where(path => IsLargeFile(Path.Combine(root, path)))
-                .Select(path => path.Replace('\\', '/'))
-                .Take(100)
-                .ToList();
+            catch (UnauthorizedAccessException error)
+            {
+                scanWarnings.Add($"Large asset check skipped: {error.Message}");
+                return new List<string>();
+            }
         }
 
         private static bool IsLargeFile(string path)

@@ -1,13 +1,17 @@
-# ChunkyMonkey Unity Tools
+# ChunkyMonkey Git and LFS Tools
 
-Free Unity Editor extension for Git/LFS hygiene in Unity projects.
+Editor-only repository checks for projects that use Git and Git LFS.
 
-Install from Unity Package Manager:
+After importing the package, open `Tools > ChunkyMonkey > Repo Doctor`.
 
-```text
-https://github.com/pwlot/ChunkyMonkey.git?path=addons/unity/EditorPackage
-```
+The tool checks:
 
-Then open `Tools > ChunkyMonkey > Repo Doctor`.
+1. Missing `.meta` files under `Assets/`.
+2. Generated project folders that should normally be ignored.
+3. Missing `.gitignore` rules.
+4. Missing `.gitattributes` rules for common binary asset types.
+5. Project assets that are 50 MB or larger.
 
-The extension works standalone inside Unity. It shows whether ChunkyMonkey desktop is installed, can open it for the current Unity project, and has a direct download button.
+Use `Apply .gitignore` or `Apply LFS Rules` to append only missing rules. Existing file contents are preserved.
+
+Start with `Documentation/ChunkyMonkey-Git-and-LFS-Tools-Manual.pdf` for installation, usage, limitations, and troubleshooting.

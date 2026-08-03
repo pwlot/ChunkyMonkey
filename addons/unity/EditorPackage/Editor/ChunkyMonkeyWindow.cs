@@ -5,14 +5,12 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace ChunkyMonkey.Unity
+namespace ChunkyMonkey.GitLfsTools
 {
     public sealed class ChunkyMonkeyWindow : EditorWindow
     {
         private Vector2 scroll;
         private Report report;
-        private BridgeStatus bridge;
-        private string bridgeMessage;
         private Texture2D logo;
         private bool showDetails;
         private bool showMeta;
@@ -67,7 +65,7 @@ namespace ChunkyMonkey.Unity
 
                 using (new EditorGUILayout.VerticalScope())
                 {
-                    EditorGUILayout.LabelField("ChunkyMonkey Unity Tools", Styles.Header);
+                    EditorGUILayout.LabelField("ChunkyMonkey Git and LFS Tools", Styles.Header);
                     EditorGUILayout.LabelField("Repo Doctor", EditorStyles.miniBoldLabel);
                     EditorGUILayout.LabelField(ProjectName(), EditorStyles.miniLabel);
                 }
@@ -89,7 +87,7 @@ namespace ChunkyMonkey.Unity
 
                 DrawMetricRow(
                     ("Git ignore gaps", report.MissingIgnoreRules.Count),
-                    ("Large assets", report.LargeUntrackedAssets.Count),
+                    ("Large assets", report.LargeAssets.Count),
                     ("Scan warnings", report.ScanWarnings.Count));
             }
         }
@@ -100,8 +98,6 @@ namespace ChunkyMonkey.Unity
             {
                 using (new EditorGUILayout.HorizontalScope())
                 {
-                    DrawBridgeStatus();
-                    GUILayout.FlexibleSpace();
                     if (GUILayout.Button("Refresh", GUILayout.Width(110), GUILayout.Height(28))) Refresh();
                 }
 
@@ -119,21 +115,6 @@ namespace ChunkyMonkey.Unity
                     }
                 }
 
-                using (new EditorGUILayout.HorizontalScope())
-                {
-                    using (new EditorGUI.DisabledScope(!bridge.Found))
-                    {
-                        if (ToolButton("Open in ChunkyMonkey")) OpenChunkyMonkey();
-                    }
-
-                    if (ToolButton("Download ChunkyMonkey")) DownloadChunkyMonkey();
-                }
-
-                if (!string.IsNullOrWhiteSpace(bridgeMessage))
-                {
-                    EditorGUILayout.Space(4);
-                    EditorGUILayout.LabelField(bridgeMessage, EditorStyles.wordWrappedMiniLabel);
-                }
             }
         }
 
@@ -147,14 +128,7 @@ namespace ChunkyMonkey.Unity
             DrawSection("Missing .gitignore rules", report.MissingIgnoreRules, ref showIgnore);
             DrawSection("Missing .gitattributes LFS rules", report.MissingLfsRules, ref showLfs);
             DrawSection("Scan warnings", report.ScanWarnings, ref showWarnings);
-            DrawSection("Large untracked assets", report.LargeUntrackedAssets, ref showLarge);
-        }
-
-        private void DrawBridgeStatus()
-        {
-            var status = bridge.Found ? "Desktop app: Installed" : "Desktop app: Not installed";
-            var style = bridge.Found ? EditorStyles.miniBoldLabel : EditorStyles.miniLabel;
-            EditorGUILayout.LabelField(status, style, GUILayout.MinWidth(180));
+            DrawSection("Large project assets", report.LargeAssets, ref showLarge);
         }
 
         private static void DrawMetricRow((string Label, int Count) a, (string Label, int Count) b, (string Label, int Count) c)
@@ -204,8 +178,6 @@ namespace ChunkyMonkey.Unity
             try
             {
                 report = RepoScanner.Scan(ProjectRoot());
-                bridge = ChunkyMonkeyBridge.Detect();
-                bridgeMessage = string.Empty;
             }
             catch (Exception error)
             {
@@ -214,8 +186,6 @@ namespace ChunkyMonkey.Unity
                     ProjectRoot = ProjectRoot(),
                     ScanWarnings = new List<string> { error.Message }
                 };
-                bridge = BridgeStatus.NotFound();
-                bridgeMessage = string.Empty;
             }
 
             Repaint();
@@ -235,18 +205,6 @@ namespace ChunkyMonkey.Unity
                 ChunkyMonkeyWindowRules.LfsPatterns.Select(pattern => $"{pattern} filter=lfs diff=lfs merge=lfs -text"));
             AssetDatabase.Refresh();
             Refresh();
-        }
-
-        private void OpenChunkyMonkey()
-        {
-            var result = ChunkyMonkeyBridge.Open(bridge, ProjectRoot());
-            bridgeMessage = result.Ok ? "Opened this project in ChunkyMonkey." : result.Output;
-            Repaint();
-        }
-
-        private static void DownloadChunkyMonkey()
-        {
-            Application.OpenURL("https://chunkymonkey.dev/#download");
         }
 
         private string SummaryText()
@@ -281,7 +239,7 @@ namespace ChunkyMonkey.Unity
         {
             var directPaths = new[]
             {
-                "Packages/com.pwlot.chunkymonkey-unity/Images/chunkymonkey-biting-icon.png",
+                "Packages/com.pwlot.chunkymonkey-git-lfs-tools/Images/chunkymonkey-biting-icon.png",
                 "Assets/ChunkyMonkey/Images/chunkymonkey-biting-icon.png"
             };
 
