@@ -57,7 +57,7 @@ Linux x64 builds are experimental until install/update verification is complete.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
-- Offers a one-time Pro upgrade for multi-repo workspace tools, account management, and stronger diagnostics.
+- Offers a one-time Pro upgrade for keeping multiple GitHub identities ready for fast switching.
 
 ## Why it exists
 

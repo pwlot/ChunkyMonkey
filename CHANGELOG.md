@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.9.2 - 2026-08-03
+
+### Highlights
+
+- Made multiple simultaneous repository tabs available in Free across normal open, scan, and open-all workflows.
+- Focused lifetime Pro on keeping multiple GitHub identities ready for fast switching.
+- Locked a repository during Commit and Push while keeping other open repositories usable.
+- Fixed Hugging Face CLI discovery from user Python Scripts and compacted repository toolbar labels.
+- Rebuilt the site comparison with clear feature states and 1-year, 5-year, and 10-year ownership-cost views.
+
 ## 0.9.1 - 2026-08-01
 
 ### Highlights
