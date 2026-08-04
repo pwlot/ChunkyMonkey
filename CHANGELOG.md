@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.9.3 - 2026-08-04
+
+### Highlights
+
+- Locked the active repository during file, selected, all-file, hunk, and line Stage/Unstage actions until the mutation and refresh finish.
+- Updated the free Unity Editor package to `0.1.5` with standalone Git/LFS checks and a bundled numbered PDF manual.
+- Clarified comparison descriptions while keeping the full price-and-feature matrix compact.
+
 ## 0.9.2 - 2026-08-03
 
 ### Highlights
