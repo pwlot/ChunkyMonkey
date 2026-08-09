@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.9.4 - 2026-08-09
+
+### Highlights
+
+- Added a dedicated Commit action, clearer Stage and Discard controls, and central result views for previews, status, history, comparisons, reports, and errors.
+- Replaced GitHub device-code account setup with direct browser authorization.
+- Unified Browser Git, GitHub CLI, SSH, and saved identities into one account row per GitHub username.
+- Routed clone, pull, push, and supported API operations through the selected account without changing global Git settings.
+- Kept repository tabs account-scoped so newly added accounts start empty and returning accounts restore only their own tabs.
+
 ## 0.9.3 - 2026-08-04
 
 ### Highlights
