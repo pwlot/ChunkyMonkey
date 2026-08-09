@@ -1,21 +1,65 @@
-MIT License
+CHUNKYMONKEY SOFTWARE LICENSE AGREEMENT
 
-Copyright (c) 2026 Pawel Pachniewski
+Copyright (c) 2026 Pawel Pachniewski. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+By downloading, installing, or using ChunkyMonkey, you agree to this Agreement.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Scope
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This Agreement applies to the ChunkyMonkey desktop application, command-line tools, launchers, built-in add-ons, documentation, first-party source files, and first-party assets distributed with them (the "Software"). Third-party components are excluded and remain governed by their own license terms.
+
+2. License Grant
+
+Subject to this Agreement, you receive a limited, non-exclusive, non-transferable license to install and use the Software for lawful personal or internal business purposes.
+
+The Free features may be used without a paid activation key. A valid Pro purchase permits the purchased Pro features to be used by one named individual on devices controlled by that individual or their organization. A Pro license key may not be shared or transferred. "Lifetime" describes the duration of the granted right to use the purchased Pro features. It does not require continued hosting, updates, support, or compatibility.
+
+You may make copies only as technically necessary to install, update, run, or back up the Software for your licensed use.
+
+3. Restrictions
+
+Except where a restriction is prohibited by applicable law, you may not, and may not permit another person to:
+
+a. publish, distribute, sublicense, sell, resell, rent, lease, host, or otherwise make the Software available to another person;
+
+b. modify, translate, adapt, or create derivative works from the Software;
+
+c. reverse engineer, decompile, disassemble, decode, extract, or otherwise attempt to discover source code or non-public implementation details of the Software;
+
+d. bypass, disable, remove, or interfere with activation, licensing, update, security, or feature-control mechanisms;
+
+e. use extracted, reconstructed, or non-public portions of the Software to create, train, or improve a competing product or service; or
+
+f. remove or alter copyright, trademark, license, or ownership notices.
+
+4. Ownership
+
+The Software is licensed, not sold. Pawel Pachniewski retains all right, title, and interest in the Software, including all copyright, trademark, and other intellectual property rights not expressly granted by this Agreement. ChunkyMonkey names, logos, and branding are not licensed for reuse.
+
+5. Third-Party Components
+
+The Software may include third-party libraries, runtimes, or other components. Their license files or notices govern those components only. This Agreement governs all first-party ChunkyMonkey code, documentation, and assets.
+
+6. Updates and Services
+
+Updates may replace or modify the Software and are governed by the license supplied with that update. Online services, downloads, and support may change or end. No update, service, or support period is guaranteed unless required by applicable law or a separate written agreement.
+
+7. Termination
+
+This license ends automatically if you materially breach this Agreement. On termination, you must stop using the Software and delete copies under your control. Sections concerning restrictions, ownership, disclaimers, liability, and general terms survive termination.
+
+8. Disclaimer
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR ERROR-FREE OPERATION.
+
+9. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, PAWEL PACHNIEWSKI WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR LOST PROFITS, DATA, REPOSITORIES, BUSINESS, OR OPPORTUNITY ARISING FROM THE SOFTWARE. TOTAL LIABILITY ARISING FROM THE SOFTWARE WILL NOT EXCEED THE AMOUNT YOU PAID FOR THE SOFTWARE DURING THE TWELVE MONTHS BEFORE THE CLAIM.
+
+10. General
+
+If any provision is unenforceable, it will be limited to the minimum extent necessary and the remaining provisions will continue in effect. This Agreement and any applicable proof of purchase form the entire agreement for the Software unless a separate written agreement applies. Nothing in this Agreement limits rights that cannot lawfully be waived, including mandatory consumer rights.
+
+11. Contact
+
+License questions: chunkymonkey@pwlot.com

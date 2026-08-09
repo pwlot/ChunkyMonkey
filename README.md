@@ -158,11 +158,11 @@ Public bug reports omit raw local paths, remotes, account names, and file lists.
 
 ## Source Availability
 
-ChunkyMonkey desktop and CLI are distributed through public release files. The Unity Editor package source is public under `addons/unity/EditorPackage`.
+ChunkyMonkey desktop and CLI are distributed through public release files. The Unity Editor package source is visible under `addons/unity/EditorPackage` for inspection and integration, but it is not open-source software and remains covered by the ChunkyMonkey Software License Agreement.
 
 ## License
 
-ChunkyMonkey is distributed under the [MIT License](LICENSE). Release packages include a copy of the license.
+ChunkyMonkey is proprietary software distributed under the [ChunkyMonkey Software License Agreement](LICENSE). It may be installed and used under that agreement, but it may not be redistributed, resold, modified, reverse engineered, or used to build derivative products except where applicable law requires otherwise. Release packages include a copy of the license.
 
 ## Bugs
 

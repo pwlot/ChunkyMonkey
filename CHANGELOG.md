@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.9.5 - 2026-08-09
+
+### Highlights
+
+- Changed ChunkyMonkey distribution to a proprietary software license that permits normal use while prohibiting redistribution, resale, modification, reverse engineering, license bypass, and derivative use.
+- Added installer license acceptance and release checks so desktop, CLI, npm, Python, site, and public downloads carry the same first-party terms while preserving third-party licenses.
+
 ## 0.9.4 - 2026-08-09
 
 ### Highlights
