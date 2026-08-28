@@ -42,8 +42,8 @@
 ### Highlights
 
 - Added a built-in Unreal Engine adapter for generated-folder, large-asset, and Git LFS checks.
-- Added Codex and Claude Code detection/setup plus commit-message and code-review prompts to MCP Agent.
-- Replaced the dense competitor matrix with a readable side-by-side selector and corrected current AI/MCP claims.
+- Added supported-client setup plus commit-message and code-review prompts to MCP Agent.
+- Reworked the client comparison for easier feature and price checks.
 - Added local on-device activation as a visible Pro benefit.
 
 ## 0.9.0 - 2026-08-01

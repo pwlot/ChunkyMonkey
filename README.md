@@ -4,7 +4,7 @@
   <img src="assets/chunkymonkey-biting-logo.webp" alt="ChunkyMonkey logo" width="420">
 </p>
 
-ChunkyMonkey is an agent-ready Git/LFS desktop app and CLI for large game, ML, media, and research repos.
+ChunkyMonkey is a Git/LFS desktop app and CLI for large game, ML, media, and research repos.
 
 Official site: [chunkymonkey.dev](https://chunkymonkey.dev)
 
@@ -53,7 +53,7 @@ Linux x64 builds are experimental until install/update verification is complete.
 - Includes templates and helpers for game, ML, media, and research repos.
 - Includes built-in Unity, Unreal Engine, Hugging Face, and MCP Agent add-ons for repo-specific Git/LFS checks and local agent access.
 - Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
-- Connects Codex, Claude Code, and other MCP clients to commit/review prompts, repo context, and guarded Git actions through `chunkymonkey mcp`.
+- Connects compatible MCP clients to commit/review prompts, repo context, and guarded Git actions through `chunkymonkey mcp`.
 - Exports diagnostics only when you ask for them.
 - Provides both desktop and CLI workflows.
 - Remembers the last monitor and keeps update refreshes grouped with the installed app.
@@ -180,4 +180,4 @@ Support development:
 
 [pwlot.com/#support](https://www.pwlot.com/#support)
 
-Policies: [Terms](https://chunkymonkey.dev/#terms) | [Refunds](https://chunkymonkey.dev/#refunds) | [Privacy](https://chunkymonkey.dev/#privacy)
+Policies: [Terms](https://chunkymonkey.dev/legal#terms) | [Refunds](https://chunkymonkey.dev/legal#refunds) | [Privacy](https://chunkymonkey.dev/legal#privacy)
