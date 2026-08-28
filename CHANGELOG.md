@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Limited current downloads and install guidance to Windows.
+- Added Unreal Engine to the GitHub built-ins overview and fixed Unity and MCP artwork on dark backgrounds.
+
 ## 0.9.5 - 2026-08-09
 
 ### Highlights

@@ -14,25 +14,9 @@ I built it after dealing with huge pushes, Git LFS mistakes, merge conflicts, ti
 
 ## Release
 
-### Windows
-
 [Download the latest Windows installer: `ChunkyMonkeySetup.exe`](https://github.com/pwlot/ChunkyMonkey/releases/latest/download/ChunkyMonkeySetup.exe)
 
-Windows is the primary tested path. Windows may show an unknown-publisher warning until signing is configured.
-
-### Other downloads and checksums
-
-[Open all files for the latest release](https://github.com/pwlot/ChunkyMonkey/releases/latest), then choose only the file you need:
-
-- Windows CLI: `chunkymonkey-cli-windows-x64.zip`
-- Linux desktop package (experimental): `chunkymonkey-linux-x64.deb`
-- Linux desktop tarball (experimental): `ChunkyMonkey-linux-x64.tar.gz`
-- Linux CLI (experimental): `chunkymonkey-cli-linux-x64.zip`
-- Integrity verification: `checksums.txt`
-
-macOS is planned, but it is not published in the current release yet.
-
-Linux x64 builds are experimental until install/update verification is complete. Winget availability depends on a signed installer. Desktop and CLI source code is not public. The Unity Editor package source is included in this repo.
+ChunkyMonkey currently ships for Windows only. The installer includes the desktop app and CLI. You can also download the [standalone Windows CLI](https://github.com/pwlot/ChunkyMonkey/releases/latest/download/chunkymonkey-cli-windows-x64.zip) and [SHA-256 checksums](https://github.com/pwlot/ChunkyMonkey/releases/latest/download/checksums.txt). Windows may show an unknown-publisher or SmartScreen warning.
 
 ## What it does
 
@@ -105,20 +89,33 @@ Built-ins:
 
 <table>
   <tr>
-    <td width="33%" valign="top">
+    <td width="50%" valign="top">
       <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" width="42"><br>
       <strong>Hugging Face</strong><br>
-      Model, dataset, Space, and Storage Bucket workflows. It checks local HF CLI auth/tooling, accepts bucket names, <code>owner/name</code>, <code>hf://</code> handles, and bucket URLs, then uses local HF tooling for create/check, candidate scan, dry-run, sync, and optional source-ignore.
+      Inspect model, dataset, Space, and Storage Bucket state. Preview bucket sync before writing.
     </td>
-    <td width="33%" valign="top">
-      <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="34"><br>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/unity/FFFFFF">
+        <img src="https://cdn.simpleicons.org/unity/000000" alt="Unity logo" width="42">
+      </picture><br>
       <strong>Unity</strong><br>
-      Project shape, missing <code>.meta</code> files, generated folders, ignore/LFS rules, large project assets, and the free ChunkyMonkey Git and LFS Tools Editor extension.
+      Find missing <code>.meta</code> files, generated folders, ignore/LFS gaps, and large project assets. Includes the free Unity Editor extension.
     </td>
-    <td width="33%" valign="top">
-      <img src="assets/mcp-agent-robot-monkey.webp" alt="MCP Agent robot monkey" width="34"><br>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/unrealengine/FFFFFF">
+        <img src="https://cdn.simpleicons.org/unrealengine/000000" alt="Unreal Engine logo" width="42">
+      </picture><br>
+      <strong>Unreal Engine</strong><br>
+      Find generated folders, large untracked assets, and tracked <code>.uasset</code> or <code>.umap</code> files outside Git LFS.
+    </td>
+    <td width="50%" valign="top">
+      <img src="assets/mcp-agent-robot-monkey-transparent.png" alt="MCP Agent robot monkey" width="46"><br>
       <strong>MCP Agent</strong><br>
-      Local MCP server for AI agents. It exposes repo status, staging, diffs, history, conflicts, Review Prep, health checks, and guarded Git actions. Start with <code>chunkymonkey mcp</code> or use <code>chunkymonkey mcp --read-only</code>.
+      Expose repo status, diffs, history, Review Prep, and confirmation-gated Git actions to compatible local MCP clients.
     </td>
   </tr>
 </table>
