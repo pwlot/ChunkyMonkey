@@ -1,7 +1,7 @@
 # Security
 
-Report security-sensitive issues privately at [chunkymonkey@pwlot.com](mailto:chunkymonkey@pwlot.com) instead of opening a public issue.
+Report security-sensitive problems privately at [chunkymonkey@pwlot.com](mailto:chunkymonkey@pwlot.com).
 
-Do not post secrets, access tokens, private repo contents, proprietary files, or private dataset contents in public issues.
+Do not attach secrets, access tokens, private repo contents, proprietary files, or private dataset contents to a security report.
 
-Public downloads include SHA-256 checksums when available. Windows builds may be unsigned until signing is configured, so Windows can show unknown-publisher or SmartScreen warnings. Winget releases require a signed installer.
+Current releases include SHA-256 checksums. Unsigned Windows builds may trigger an unknown-publisher or SmartScreen warning.

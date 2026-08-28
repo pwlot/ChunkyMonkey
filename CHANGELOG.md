@@ -2,15 +2,24 @@
 
 ## Unreleased
 
+## 0.9.6 - 2026-08-28
+
+### Highlights
+
+- Kept open repositories current after outside file edits, branch changes, and other Git activity while reducing unnecessary background work.
+- Preserved saved GitHub account order and made browser authorization, selected-account routing, and account recovery more reliable.
+- Kept disabled add-ons off across restarts, rejected unsafe conflict-file paths, and improved update startup and rollback reliability.
+- Made optional AI settings easier to configure per service, model, key, and endpoint while keeping deterministic local suggestions available.
+- Changed Bug Report to open a sanitized email draft for review before sending.
+- Improved dark-mode tab contrast, added Unreal Engine to the built-in add-on overview, and corrected Unity and MCP artwork.
 - Limited current downloads and install guidance to Windows.
-- Added Unreal Engine to the GitHub built-ins overview and fixed Unity and MCP artwork on dark backgrounds.
 
 ## 0.9.5 - 2026-08-09
 
 ### Highlights
 
-- Changed ChunkyMonkey distribution to a proprietary software license that permits normal use while prohibiting redistribution, resale, modification, reverse engineering, license bypass, and derivative use.
-- Added installer license acceptance and release checks so desktop, CLI, npm, Python, site, and public downloads carry the same first-party terms while preserving third-party licenses.
+- Added a clear proprietary license for the desktop app, CLI, and Unity Editor package.
+- Added license review during Windows installation and included the same terms with every current download.
 
 ## 0.9.4 - 2026-08-09
 
@@ -93,7 +102,7 @@
 ## 0.8.7 - 2026-05-21
 
 - Added side-by-side Diff View hunk and zero-context line-block stage/unstage/discard.
-- Added left Navigator Pull Requests, Issues, PR risk, and undo/checkpoint groups.
+- Added left Navigator Pull Requests, PR risk, and undo/checkpoint groups.
 - Added PR risk checks against the target branch, including overlapping files and likely conflict candidates.
 - Expanded Merge Doctor with base/ours/theirs/result panes and Git mergetool launch.
 - Added footer update status/check button for the selected Live/Dev channel.
@@ -110,7 +119,7 @@
 - Added the local add-on contract for folder-based repo adapters with explicit trust before backend code runs.
 - Added the free Unity Editor extension source and public Hugging Face Hub repo checker.
 - Polished Settings, account/add-on menus, update UI, and dark-mode contrast.
-- Hardened updater lifecycle, GitHub auth-route diagnostics, add-on execution, and public release publishing.
+- Made updater recovery, GitHub auth-route diagnostics, and add-on execution safer.
 - Updated user docs for desktop workflows, Review Prep, Hugging Face, Unity, and add-on developers.
 
 ## 0.8.5 - 2026-05-15
@@ -155,7 +164,7 @@
 - Improved settings layout, update controls, dark mode switches, and repo picker controls.
 - Removed account reorder arrow buttons; drag reorder remains.
 - Simplified public docs into one compact guide.
-- Windows release artifacts remain unsigned until signing credentials are configured.
+- Windows may show an unknown-publisher or SmartScreen warning.
 
 ## 0.7.1 - 2026-05-10
 
@@ -163,14 +172,13 @@
 - Added standalone Linux CLI release artifact.
 - Kept Windows installer and Windows CLI artifacts available.
 - Updated downloads to route through the latest GitHub Release.
-- macOS remains planned, but is not included in this release.
-- Windows SmartScreen may warn on early installer builds while signing and reputation settle.
+- Windows may show an unknown-publisher or SmartScreen warning.
 
 ## 0.7.0 - 2026-05-10
 
 - Added ChunkyMonkey Pro with signed lifetime license activation.
-- Added Stripe checkout, license success page, and branded purchase email.
-- Added launch promo support for checkout.
+- Added Pro checkout, a license success page, and purchase email delivery.
+- Added launch discount-code support.
 - Added multi-repo workspace tools, fast account menus, and profile workflows.
 - Added repo management for known repos, opening from disk, opening all repos in a folder, repo creation, search, and browsing.
 - Added GitHub account/org refresh through local GitHub CLI state.
@@ -180,8 +188,7 @@
 - Improved human-readable errors and Unicode commit/history rendering.
 - Added user docs for the desktop app, CLI, Pro, settings, repo management, and troubleshooting.
 - No telemetry. Diagnostics and bug reports are user-triggered.
-- Source is not public yet.
-- Windows SmartScreen may warn on early installer builds while signing and reputation settle.
+- Windows may show an unknown-publisher or SmartScreen warning.
 
 ## 0.1.3 - 2026-05-05
 
@@ -191,5 +198,4 @@
 - Added chunked push flow for large repos, LFS-heavy projects, and slower connections.
 - Added SHA-256 checksums for public downloads.
 - No telemetry. Diagnostics and bug reports are user-triggered.
-- Source is not public yet.
-- Windows SmartScreen may warn on early installer builds while signing and reputation settle.
+- Windows may show an unknown-publisher or SmartScreen warning.

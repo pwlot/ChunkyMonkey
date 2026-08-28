@@ -16,8 +16,8 @@
 
 ## 0.1.3
 
-- Added macOS/Linux desktop bridge path detection and `CHUNKYMONKEY_DESKTOP` override.
-- Added release/CI guardrails so the public Git package copy cannot drift from the source package.
+- Added broader desktop bridge discovery before the bridge was removed in 0.1.5.
+- Added package consistency checks.
 
 ## 0.1.2
 

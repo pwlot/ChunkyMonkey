@@ -20,42 +20,23 @@ ChunkyMonkey currently ships for Windows only. The installer includes the deskto
 
 ## What it does
 
-- Auto-chunks large commits and pushes into smaller parts.
-- Helps avoid push timeouts on slow or unreliable connections.
-- Checks Git LFS coverage for large assets, model files, datasets, video, audio, and binaries.
-- Shows push/pull progress, speed, ETA, and failure status.
-- Includes Diff View for side-by-side file review with whitespace-noise hiding plus hunk and line-block stage/unstage/discard.
-- Includes Merge Doctor for conflicted files: base/ours/theirs/result panes, keep ours, keep theirs, keep both, open an editor, launch mergetool, ask an optional LLM helper, accept a reviewed suggestion, abort, or finish.
-- Lets you bring your own key for optional AI assistance through supported cloud and local providers or a compatible custom endpoint.
-- Scans folders for Git repos and keeps large workspaces manageable.
-- Clones repos, creates repos, and works with GitHub accounts through local Git/GitHub tools.
-- Shows commit history and branch state.
-- Protects branch checkout when the worktree has changes.
-- Includes Review Prep for checkpoints, deterministic change buckets, review branches, PR risk checks, compare links, push, and PR handoff when GitHub CLI is ready.
-- Shows GitHub Pull Requests, Issues, PR risk, stashes, conflicts, and undo/checkpoint entries in the left Navigator.
-- Includes repo health and repair tools for stale remotes, LFS state, repo bloat, cache folders, and generated files.
-- Includes templates and helpers for game, ML, media, and research repos.
-- Includes built-in Unity, Unreal Engine, Hugging Face, and MCP Agent add-ons for repo-specific Git/LFS checks and local agent access.
-- Lets developers add local repo adapters through a small add-on manifest and Python backend contract.
-- Connects compatible MCP clients to commit/review prompts, repo context, and guarded Git actions through `chunkymonkey mcp`.
-- Exports diagnostics only when you ask for them.
-- Provides both desktop and CLI workflows.
-- Remembers the last monitor and keeps update refreshes grouped with the installed app.
-- Offers a one-time Pro upgrade for keeping multiple GitHub identities ready for fast switching.
+- Splits large commits and pushes into smaller parts, with progress, speed, ETA, and retry-friendly behavior for slow or unreliable connections.
+- Finds large files outside Git LFS, repo bloat, generated folders, cache files, and other asset risks before they become cleanup work.
+- Reviews changes side by side and stages, unstages, or checkpoint-discards hunks and selected line blocks.
+- Shows visual history, branches, stashes, conflicts, Pull Requests, PR risk, and local recovery points.
+- Resolves conflicts in Merge Doctor with base, ours, theirs, and result views, local backups, editor or mergetool handoff, and reviewed actions.
+- Opens, scans, clones, and creates repositories while keeping selected GitHub account routes separate.
+- Turns mixed changes into Review Prep checkpoints, buckets, commits, branches, risk checks, compare links, and PR handoff.
+- Includes local Unity, Unreal Engine, Hugging Face, and MCP Agent add-ons.
+- Provides desktop and CLI workflows, local diagnostic export, and in-app updates.
 
-## Why it exists
+## Built for large repos
 
-ChunkyMonkey is for repos where pushes fail because the repo is big, binary-heavy, or sitting behind a bad connection:
-
-- Unity, Unreal, Godot, and custom engine projects.
-- ML projects with checkpoints, weights, datasets, notebooks, generated artifacts, and experiment output.
-- Media projects with large video, audio, image, cache, and export folders.
-- Research repos with many generated files and fragile reproduction state.
-- Any repo where a normal push can turn into a timeout, LFS mistake, or cleanup session.
+ChunkyMonkey is for game projects, model repos, datasets, media work, and research repos where large assets, Git LFS mistakes, or unreliable connections can turn a normal push into a timeout or cleanup session.
 
 ## CLI
 
-The CLI and desktop app use the same core logic, so the same workflow is available from either surface.
+The Windows installer includes the CLI. Run `chunkymonkey` with no arguments for the guided menu.
 
 Typical CLI use:
 
@@ -68,8 +49,6 @@ chunkymonkey
 # Preview first? y
 # Push? y
 ```
-
-ChunkyMonkey uses the current Git repo automatically, picks practical chunk sizes, and pushes in smaller pieces so huge commits are less likely to fail halfway through. Slow connection, large assets, bad LFS setup: those are the cases it is built for.
 
 For automation and scripts:
 
@@ -126,7 +105,7 @@ Install ChunkyMonkey Git and LFS Tools from Unity Package Manager:
 https://github.com/pwlot/ChunkyMonkey.git?path=addons/unity/EditorPackage
 ```
 
-Developer docs: [chunkymonkey.dev/docs/add-ons](https://chunkymonkey.dev/docs/add-ons)
+Developer docs: [chunkymonkey.dev/docs/add-ons](https://www.chunkymonkey.dev/docs/add-ons.html)
 
 ## Release channel
 
@@ -137,7 +116,6 @@ This public repo is for:
 - downloads
 - release notes
 - checksums
-- bug reports
 - support docs
 - security/contact info
 
@@ -145,13 +123,11 @@ The source code is not public.
 
 ## Trust model
 
-ChunkyMonkey shells out to local Git. It does not host your repos, sync private files to a service, or run background telemetry.
+ChunkyMonkey shells out to local Git. It has no repository service and collects no telemetry.
 
-Risky operations are explicit. Bug reports are user-triggered. Diagnostics are exported locally unless you choose to send them.
+Risky operations are explicit. Git remotes and optional tools run only when you invoke them using the accounts and endpoints you configure. Bug Report opens a prefilled email for your review. Common secrets, absolute local paths, and recognized remote URLs are redacted automatically. Diagnostics stay local unless you attach them yourself.
 
-Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. MCP write tools require explicit `confirm=true`. Optional AI assistance uses the service, API key, and optional base URL you configure locally; API keys are kept in the OS credential store when available. If a request fails or returns unsafe output, ChunkyMonkey falls back to deterministic guidance.
-
-Public bug reports omit raw local paths, remotes, account names, and file lists. Use the local diagnostics export when you need to share private detail with someone you trust.
+Discarding a hunk or line block creates a local checkpoint first. Merge Doctor creates local backup sessions before writing a resolved conflict file. It stages only the selected file and does not create a commit automatically. MCP write tools require explicit `confirm=true`. Optional AI assistance uses only the service, API key, and endpoint you configure, and only when you request it. API keys are kept in the OS credential store when available.
 
 ## Source Availability
 
@@ -161,17 +137,9 @@ ChunkyMonkey desktop and CLI are distributed through public release files. The U
 
 ChunkyMonkey is proprietary software distributed under the [ChunkyMonkey Software License Agreement](LICENSE). It may be installed and used under that agreement, but it may not be redistributed, resold, modified, reverse engineered, or used to build derivative products except where applicable law requires otherwise. Release packages include a copy of the license.
 
-## Bugs
-
-Use GitHub Issues:
-
-[github.com/pwlot/ChunkyMonkey/issues/new](https://github.com/pwlot/ChunkyMonkey/issues/new)
-
-Do not include secrets, tokens, private repo contents, or proprietary files in public issues.
-
-For security-sensitive reports, email [chunkymonkey@pwlot.com](mailto:chunkymonkey@pwlot.com).
-
 ## Support
+
+Use Bug Report inside ChunkyMonkey for product problems. It opens a prefilled email to [p.pachniewski@gmail.com](mailto:p.pachniewski@gmail.com) with the subject `ChunkyMonkey bug report: [your subject]`. Review it before sending. If the app cannot start, send the same email manually.
 
 Support development:
 
