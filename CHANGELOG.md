@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 0.9.7 - 2026-09-05
+
+### Fixes
+
+- Review Prep now rejects stale file selections before staging or committing, preserving unrelated changes.
+- Fixed Review Prep commits for already-staged file renames.
+- Fixed selective checkpoint restore for new files saved in the checkpoint.
+- Preserved trailing spaces and tabs when staging, unstaging, or discarding hunks and line blocks.
+- Removed the 40-file preview limit so every file in a Review Prep bucket can be inspected.
+- Added three website screenshots using an example project, with an enlarged view and screenshot switching.
+
 ## 0.9.6 - 2026-08-28
 
 ### Highlights
